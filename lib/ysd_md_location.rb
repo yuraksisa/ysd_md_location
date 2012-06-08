@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'data_mapper'
 
 module LocationDataSystem
