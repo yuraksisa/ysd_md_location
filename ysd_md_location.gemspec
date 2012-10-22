@@ -8,6 +8,8 @@ Gem::Specification.new do |s|
   s.summary = "A DattaMapper-based model for location"
   s.homepage = "http://github.com/yuraksisa/ysd_md_location"
     
-  s.add_runtime_dependency "data_mapper", "1.1.0"
+  s.add_runtime_dependency "data_mapper", "1.2.0"
+
+  s.add_runtime_dependency "ysd_core_plugins"     # Aspects
   
 end
