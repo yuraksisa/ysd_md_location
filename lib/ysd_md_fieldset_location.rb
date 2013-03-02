@@ -26,7 +26,7 @@ module FieldSet
 
       the_address = []
       the_address << location_street unless location_street.nil? or location_street.empty?
-      the_address << location_number unless location_number.nil? or location_number.empty?
+      the_address << location_number unless location_number.nil? or location_number.to_s.empty?
       the_address << location_complement unless location_complement.nil? or location_complement.empty?
 
       the_city = []
@@ -35,9 +35,9 @@ module FieldSet
       the_city << location_country unless location_country.nil? or location_country.empty?
        
       full_address = "" 
-      full_address << the_address.split(" ") unless the_address.empty?
-      full_address << ", #{the_city.split(' ')}" unless the_city.empty?
-      full_address << " #{location_zip}" unless location_zip.nil? or location_zip.empty?
+      full_address << the_address.join(" ") unless the_address.empty?
+      full_address << ", #{the_city.join(' ')}" unless the_city.empty?
+      full_address << " #{location_zip}" unless location_zip.nil? or location_zip.to_s.empty?
 
       return full_address
 
