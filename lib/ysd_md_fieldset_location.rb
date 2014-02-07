@@ -16,6 +16,8 @@ module FieldSet
         model.property :location_state, String, :field => 'location_state', :length => 60
         model.property :location_country, String, :field => 'location_country', :length => 50
         model.property :location_zip, String, :field => 'location_zip', :length => 10
+        model.property :location_longitude, Float, :field => 'location_longitude'
+        model.property :location_latitude, Float, :field => 'location_latitude'
      
     end
     
@@ -31,7 +33,7 @@ module FieldSet
 
       the_city = []
       the_city << location_city unless location_city.nil? or location_city.empty?
-      the_city << location_state unless location_state.nil? or location_state.empty?
+      the_city << location_state unless location_state.nil? or location_state.empty? or (location_state == location_city)
       the_city << location_country unless location_country.nil? or location_country.empty?
        
       full_address = "" 
